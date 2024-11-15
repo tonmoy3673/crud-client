@@ -1,7 +1,11 @@
+import AddUsers from "../Pages/AddUsers";
+import Users from "../Pages/Users";
+
 const Home =()=>{
     return (
         <div>
-            <h2>This is Home Page</h2>
+            <Users/>
+            <AddUsers/>
         </div>
     )
 };
