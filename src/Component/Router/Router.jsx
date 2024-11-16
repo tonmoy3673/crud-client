@@ -3,6 +3,7 @@ import Home from "../Home/Home";
 import Main from "../Main/Main";
 import About from "../Pages/About";
 import AddUsers from "../Pages/AddUsers";
+import User from "../Pages/User";
 import Users from "../Pages/Users";
 
 export const router =createBrowserRouter([
@@ -12,11 +13,13 @@ export const router =createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<Home/> 
+                element:<Home/>,
+                loader:()=>fetch('http://localhost:5000/users')
             },
             {
                 path:'/home',
-                element:<Home/>
+                element:<Home/>,
+                loader:()=>fetch('http://localhost:5000/users')
             },
             {
                 path:'/add',
@@ -24,7 +27,13 @@ export const router =createBrowserRouter([
             },
             {
                 path:'/users',
-                element:<Users/>
+                element:<Users/>,
+                loader:()=>fetch('http://localhost:5000/users')
+            },
+            {
+                path:'/user',
+                element:<User/>,
+                
             },
             {
                 path:'/about',
