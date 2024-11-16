@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const AddUsers =()=>{
 
     const handleSubmit=(event)=>{
@@ -12,6 +14,13 @@ const AddUsers =()=>{
             name,email,photo
         };
         console.log(user);
+    //   const result= Swal.fire({
+    //         title: "Do you want to Add New User?",
+    //         showDenyButton: true,
+    //         showCancelButton: true,
+    //         confirmButtonText: "Add",
+    //         denyButtonText: `Don't Add`
+    //       })
         fetch('http://localhost:5000/users',{
             method:'POST',
             headers:{
@@ -20,7 +29,16 @@ const AddUsers =()=>{
             body:JSON.stringify(user)
         })
         .then((res)=>res.json())
-        .then((data)=>console.log(data))
+
+        .then((data)=>{
+            if (data.insertedId) {
+                Swal.fire("Added!", "", "success");
+              } else {
+                Swal.fire("User is not saved", "", "info");
+              }
+            console.log(data)
+        })
+        form.reset()
     }
 
     return (
