@@ -14,12 +14,12 @@ export const router =createBrowserRouter([
             {
                 path:'/',
                 element:<Home/>,
-                loader:()=>fetch('http://localhost:5000/users')
+                
             },
             {
                 path:'/home',
                 element:<Home/>,
-                loader:()=>fetch('http://localhost:5000/users')
+                
             },
             {
                 path:'/add',
@@ -28,7 +28,7 @@ export const router =createBrowserRouter([
             {
                 path:'/users',
                 element:<Users/>,
-                loader:()=>fetch('http://localhost:5000/users')
+               
             },
             {
                 path:'/user',

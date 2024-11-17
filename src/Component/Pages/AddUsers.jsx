@@ -1,8 +1,10 @@
+import { useState } from "react";
 import Swal from "sweetalert2";
 
 const AddUsers =()=>{
-
-    const handleSubmit=(event)=>{
+    const [loading,setLoading]=useState(false)
+    const handleSubmit= async(event)=>{
+        
         event.preventDefault();
         console.log('clicked');
         const form = event.target;
@@ -14,13 +16,18 @@ const AddUsers =()=>{
             name,email,photo
         };
         console.log(user);
-    //   const result= Swal.fire({
-    //         title: "Do you want to Add New User?",
-    //         showDenyButton: true,
-    //         showCancelButton: true,
-    //         confirmButtonText: "Add",
-    //         denyButtonText: `Don't Add`
-    //       })
+   
+       try {
+        const result= await Swal.fire({
+            title: "Do you want to Add New User?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Add",
+            denyButtonText: `Don't Add`
+          })
+        if (result.isConfirmed) {
+            setLoading (true)
+        
         fetch('http://localhost:5000/users',{
             method:'POST',
             headers:{
@@ -36,9 +43,18 @@ const AddUsers =()=>{
               } else {
                 Swal.fire("User is not saved", "", "info");
               }
+              setLoading (false)
             console.log(data)
         })
+
         form.reset()
+    }
+       } catch (error) {
+        console.log(error.message);
+       }
+        finally{
+            setLoading (false)
+        }
     }
 
     return (
@@ -46,6 +62,11 @@ const AddUsers =()=>{
            <div className="ml-4">
            <h2 className="text-xl md:text-3xl font-semibold mb-3 md:mb-0 text-blue-600">Add New User</h2>
            </div>
+           <>
+           {
+            loading && <p>Loading ........</p>
+           }
+           </>
             
                 <form onSubmit={handleSubmit} className="px-20">
                     <div>

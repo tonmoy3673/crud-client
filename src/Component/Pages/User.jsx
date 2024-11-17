@@ -8,12 +8,12 @@ const User =({user})=>{
            </div>
             <div>
             <h2 className="text-lg font-semibold">User Name : {name}</h2>
-            <h2 className="mt-2">User Email : <span className="text-blue-500 underline cursor-pointer">
+            <h2 className="mt-2">Email : <span className="text-blue-500 underline cursor-pointer">
             {email}</span></h2>
             </div>
            
         </div>
-            
+
        </div>
     )
 };
