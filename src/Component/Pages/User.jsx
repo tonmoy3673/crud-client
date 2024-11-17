@@ -9,9 +9,9 @@ const User =({user})=>{
             <div>
             <img src={photo}></img>
            </div>
-            <div>
-            <h2 className="text-lg font-semibold">User Name : {name}</h2>
-            <h2 className="mt-2">Email : <span className="text-blue-500 underline cursor-pointer">
+            <div className="-ms-5">
+            <h2 className="text-lg font-semibold">{name}</h2>
+            <h2 className="mt-2"><span className="text-blue-500 underline cursor-pointer">
             {email}</span></h2>
             </div>
             <div className="flex items-end justify-center flex-col gap-y-4 ms-6">
