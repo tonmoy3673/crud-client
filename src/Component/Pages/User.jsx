@@ -2,7 +2,7 @@ import { BsCartXFill, BsEyeFill, BsPencilFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const User =({user})=>{
-    const {name,email,photo} =user;
+    const {name,email,photo,_id} =user;
     return (
        <div>
          <div className="flex items-center">
@@ -15,7 +15,7 @@ const User =({user})=>{
             {email}</span></h2>
             </div>
             <div className="flex items-end justify-center flex-col gap-y-4 ms-6">
-                <Link>
+                <Link to={`/users/${_id}`}>
                 <BsEyeFill />
                 </Link>
                 <Link>

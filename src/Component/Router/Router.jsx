@@ -4,6 +4,7 @@ import Main from "../Main/Main";
 import About from "../Pages/About";
 import AddUsers from "../Pages/AddUsers";
 import User from "../Pages/User";
+import UserDetails from "../Pages/Userdetails";
 import Users from "../Pages/Users";
 
 export const router =createBrowserRouter([
@@ -34,6 +35,11 @@ export const router =createBrowserRouter([
                 path:'/user',
                 element:<User/>,
                 
+            },
+            {
+                path:'/users/:id',
+                element:<UserDetails/>,
+                loader:({params})=>fetch(`http://localhost:5000/users/${params.id}`)
             },
             {
                 path:'/about',
