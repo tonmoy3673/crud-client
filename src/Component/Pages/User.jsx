@@ -1,7 +1,7 @@
 import { BsCartXFill, BsEyeFill, BsPencilFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-const User =({user})=>{
+const User =({user,handleDelete})=>{
     const {name,email,photo,_id} =user;
     return (
        <div>
@@ -22,7 +22,7 @@ const User =({user})=>{
                 <BsPencilFill />
                 </Link>
                 <Link>
-                <BsCartXFill />
+                <BsCartXFill onClick={()=>handleDelete(_id)} />
                 </Link>
             </div>
            

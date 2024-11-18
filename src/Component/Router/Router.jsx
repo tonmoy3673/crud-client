@@ -3,7 +3,6 @@ import Home from "../Home/Home";
 import Main from "../Main/Main";
 import About from "../Pages/About";
 import AddUsers from "../Pages/AddUsers";
-import User from "../Pages/User";
 import UserDetails from "../Pages/Userdetails";
 import Users from "../Pages/Users";
 
@@ -15,11 +14,13 @@ export const router =createBrowserRouter([
             {
                 path:'/',
                 element:<Home/>,
+                loader:()=>fetch('http://localhost:5000/users')
                 
             },
             {
                 path:'/home',
                 element:<Home/>,
+                loader:()=>fetch('http://localhost:5000/users')
                 
             },
             {
@@ -29,13 +30,10 @@ export const router =createBrowserRouter([
             {
                 path:'/users',
                 element:<Users/>,
+                loader:()=>fetch('http://localhost:5000/users')
                
             },
-            {
-                path:'/user',
-                element:<User/>,
-                
-            },
+           
             {
                 path:'/users/:id',
                 element:<UserDetails/>,
