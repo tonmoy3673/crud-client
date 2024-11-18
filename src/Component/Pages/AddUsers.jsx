@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const AddUsers =()=>{
     const [loading,setLoading]=useState(false)
     const handleSubmit= async(event)=>{
-        
+        setLoading(true)
         event.preventDefault();
         console.log('clicked');
         const form = event.target;
@@ -26,7 +26,7 @@ const AddUsers =()=>{
             denyButtonText: `Don't Add`
           })
         if (result.isConfirmed) {
-            setLoading (true)
+            
         
         fetch('http://localhost:5000/users',{
             method:'POST',

@@ -22,7 +22,7 @@ const handleDelete =(id)=>{
     body: JSON.stringify(allUsers)
   })
   .then((res)=>res.json())
-  .then((data)=>setAllUsers(data))
+  .then(()=>{setAllUsers(allUsers.filter((user)=> user._id !== id))})
 
 }
 
@@ -32,7 +32,7 @@ const handleDelete =(id)=>{
       <h2 className="text-center py-8 text-2xl font-semibold">All Users</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {
-            allUsers && allUsers.map((user)=><User handleDelete={handleDelete} key={user._id} user={user}/>)
+            users && allUsers.map((user)=><User handleDelete={handleDelete} key={user._id} user={user}/>)
         }
       </div>
     </div>
