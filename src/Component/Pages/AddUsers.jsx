@@ -72,19 +72,19 @@ const AddUsers =()=>{
                     <div>
                     <div className="mb-6 flex flex-col md:flex-row items-center">
                         <label className="text-center" htmlFor="name">Name :</label>
-                        <input className="py-1 px-2 rounded-md ml-3" type="text" id="name" placeholder="Enter Name">
+                        <input required className="py-1 px-2 rounded-md ml-3" type="text" id="name" placeholder="Enter Name">
 
                         </input>
                     </div>
                     <div className="mb-6 flex flex-col md:flex-row">
                         <label className="text-center" htmlFor="email">Email :</label>
-                        <input className="py-1 px-2 rounded-md ml-3" type="email" id="email" placeholder="Enter Email Address">
+                        <input required className="py-1 px-2 rounded-md ml-3" type="email" id="email" placeholder="Enter Email Address">
 
                         </input>
                     </div>
                     <div className="flex flex-col md:flex-row mb-6">
                         <label className="text-center" htmlFor="photo">Photo :</label>
-                        <input className="py-1 px-2 rounded-md ml-3" type="text" id="photo" placeholder="Enter photo URL">
+                        <input required className="py-1 px-2 rounded-md ml-3" type="text" id="photo" placeholder="Enter photo URL">
 
                         </input>
                         
