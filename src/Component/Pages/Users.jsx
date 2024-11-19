@@ -44,7 +44,7 @@ const handleDelete =(id)=>{
       </div>
       <div className="py-8 text-center">
         {
-         length && length < allUsers.length ? <button onClick={()=>setLength(length+3)}>
+         length && length < allUsers.length ? <button className="bg-blue-500 px-2 py-1 rounded-md text-white hover:bg-amber-500 hover:text-black" onClick={()=>setLength(length+3)}>
           Show More
         </button> : "No Data Available"
         }
