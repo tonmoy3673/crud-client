@@ -18,7 +18,7 @@ const User =({user,handleDelete})=>{
                 <Link to={`/users/${_id}`}>
                 <BsEyeFill />
                 </Link>
-                <Link>
+                <Link to={`/update/${_id}`}>
                 <BsPencilFill />
                 </Link>
                 <Link>

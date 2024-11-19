@@ -10,7 +10,14 @@ const UpdateUser =()=>{
             name,email,photo
         }
 
-        fetch(``)
+        try{
+            fetch(`http://localhost:5000/users/`)
+        }
+        catch (error){
+            console.log(error.message);
+        }
+        
+      
 
     }
     return (
