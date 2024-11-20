@@ -1,5 +1,8 @@
-const UpdateUser =()=>{
+import { useLoaderData } from "react-router-dom";
 
+const UpdateUser =()=>{
+const userUpdate = useLoaderData();
+const {name,email,_id,photo} = userUpdate;
     const handleUpdate =(event)=>{
         event.preventDefault();
         const form = event.target;
@@ -11,7 +14,7 @@ const UpdateUser =()=>{
         }
 
         try{
-            fetch(`http://localhost:5000/users/`)
+            fetch(`http://localhost:5000/users/${_id}`)
         }
         catch (error){
             console.log(error.message);
