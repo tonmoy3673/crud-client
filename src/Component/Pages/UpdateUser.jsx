@@ -13,8 +13,17 @@ const {name,email,_id,photo} = userUpdate;
             name,email,photo
         }
 
+        console.log(updatedUser);
         try{
-            fetch(`http://localhost:5000/users/${_id}`)
+            fetch(`http://localhost:5000/users/${_id}`,{
+                method:'PUT',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(updatedUser)
+            })
+            .then((res)=>res.json())
+            .then((data)=>console.log(data))
         }
         catch (error){
             console.log(error.message);
@@ -27,13 +36,8 @@ const {name,email,_id,photo} = userUpdate;
         <div>
             <div className="bg-slate-200 py-8 md:py-24 flex justify-center items-center flex-col md:flex-row">
            <div className="ml-4">
-           <h2 className="text-xl md:text-3xl font-semibold mb-3 md:mb-0 text-blue-600">Add New User</h2>
+           <h2 className="text-xl md:text-3xl font-semibold mb-3 md:mb-0 text-blue-600">Update User</h2>
            </div>
-           <>
-           {/* {
-            loading && <p>Loading ........</p>
-           } */}
-           </>
             
                 <form onSubmit={handleUpdate} className="px-20">
                     <div>
